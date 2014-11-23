@@ -1,31 +1,30 @@
 //
-//  CDHelperFunctions.m
-//  CtrlDo
+//  ANHelperFunctions.m
 //
 //  Created by Oksana Kovalchuk on 6/7/14.
 //  Copyright (c) 2014 ANODA. All rights reserved.
 //
 
-#import "CDHelperFunctions.h"
+#import "ANHelperFunctions.h"
 
-void CDDispatchCompletionBlockToMainQueue(CDCompletionBlock block, NSError *error)
+void ANDispatchCompletionBlockToMainQueue(ANCompletionBlock block, NSError *error)
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (block) block(error);
     });
 }
 
-CDCompletionBlock CDMainQueueCompletionFromCompletion(CDCompletionBlock block)
+ANCompletionBlock ANMainQueueCompletionFromCompletion(ANCompletionBlock block)
 {
     if (!block) return NULL;
     return ^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            block(error);
+        ANDispatchBlockToMainQueue(^{
+           block(error);
         });
     };
 }
 
-void CDDispatchBlockToMainQueue(CDCodeBlock block)
+void ANDispatchBlockToMainQueue(ANCodeBlock block)
 {
     if ([NSThread isMainThread])
     {
@@ -39,18 +38,18 @@ void CDDispatchBlockToMainQueue(CDCodeBlock block)
     }
 }
 
-CDCodeBlock CDMainQueueBlockFromCompletion(CDCodeBlock block)
+ANCodeBlock ANMainQueueBlockFromCompletion(ANCodeBlock block)
 {
     if (!block) return NULL;
     return ^{
         
-        CDDispatchBlockToMainQueue(^{
+        ANDispatchBlockToMainQueue(^{
             block();
         });
     };
 }
 
-void CDDispatchBlockAfter(CGFloat time, CDCodeBlock block)
+void ANDispatchBlockAfter(CGFloat time, ANCodeBlock block)
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), block);
 }

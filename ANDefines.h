@@ -1,6 +1,5 @@
 //
-//  CDDefines.h
-//  CtrlDo
+//  ANDefines.h
 //
 //  Created by Oksana Kovalchuk on 28/6/14.
 //  Copyright (c) 2014 ANODA. All rights reserved.
@@ -17,18 +16,8 @@
     #define NS_BLOCK_ASSERTIONS
 #endif
 
+
 #pragma mark Callbacks
 
-@class NSManagedObject;
-
-typedef void (^CDCodeBlock)(void);
-typedef void (^CDDateBlock)(NSDate* date);
-typedef void (^CDBooleanQueryBlock)(NSError *error, BOOL result);
-typedef void (^CDCompletionBlock)(NSError *error);
-typedef void (^CDContextBlock)(NSManagedObjectContext* context);
-
-typedef void (^CDManagedObjectBlock)(id object);
-#define SYNC_ENGINE 0
-#define MCANIMATE_SHORTHAND
-
-#define AN_TABLE_LOG
+typedef void (^ANCodeBlock)(void);
+typedef void (^ANCompletionBlock)(NSError *error);
