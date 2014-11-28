@@ -17,10 +17,6 @@
 #define IOS8            (7.0 <= SYSTEM_VERSION && SYSTEM_VERSION)
 #define IOS7_OR_HIGHER            (7.0 <= SYSTEM_VERSION)
 
-#ifndef DEBUG
-    #define NS_BLOCK_ASSERTIONS
-#endif
-
 #pragma mark Callbacks
 
 typedef void (^ANCodeBlock)(void);
