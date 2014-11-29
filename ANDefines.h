@@ -15,9 +15,10 @@
 
 #define IOS7            (7.0 <= SYSTEM_VERSION && SYSTEM_VERSION < 8.0)
 #define IOS8            (7.0 <= SYSTEM_VERSION && SYSTEM_VERSION)
-#define IOS7_OR_HIGHER            (7.0 <= SYSTEM_VERSION)
+#define IOS7_OR_HIGHER  (7.0 <= SYSTEM_VERSION)
 
 #pragma mark Callbacks
 
 typedef void (^ANCodeBlock)(void);
 typedef void (^ANCompletionBlock)(NSError *error);
+typedef BOOL(^ANValidationBlock)();
