@@ -25,3 +25,13 @@ A set of small useful helpers
 ## Methods
 
 * `void ANDispatchBlockToMainQueue(ANCodeBlock);`
+
+  Execute block on main thread
+* `ANCodeBlock ANMainQueueBlockFromCompletion(ANCodeBlock);`
+  Creates new block instance with execution on main thread
+* `ANCompletionBlock ANMainQueueCompletionFromCompletion(ANCompletionBlock);`
+  Execute block on main thread
+* `void ANDispatchCompletionBlockToMainQueue(ANCompletionBlock, NSError *);`
+  Execute block on block on background thread
+* `void ANDispatchBlockAfter(CGFloat time, ANCodeBlock block);`
+  Executes the block after specified time
