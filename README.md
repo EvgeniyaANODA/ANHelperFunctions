@@ -1,6 +1,6 @@
 # ANHelperFunctions
 
-A set of small useful helpers
+A set of small useful helpers for iOS development
 
 Feel free to fork, update and make a pull-requests.
 
