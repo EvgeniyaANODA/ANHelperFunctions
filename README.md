@@ -2,9 +2,9 @@
 
 A set of small useful helpers
 
-# Details
+Feel free to fork, update and make a pull-requests.
 
-## Defines
+# Defines
 
 #### SYSTEM_VERSION
 Float sytem version number. Example: `7.1.1`, `8.1`, `8.1.1`
@@ -33,7 +33,7 @@ Returns `YES` if running on iOS 8 (8.x.x)
 #### IOS7_OR_HIGHER
 Returns `YES` if running on iOS 7 or later
 
-## Types
+# Types
 
 #### ANCodeBlock
 `typedef void (^ANCodeBlock)(void);`
@@ -44,7 +44,7 @@ Returns `YES` if running on iOS 7 or later
 #### ANValidationBlock
 `typedef BOOL(^ANValidationBlock)();`
 
-## Methods
+# Methods
 
 #### ANDispatchBlockToMainQueue(ANCodeBlock)
 
