@@ -6,66 +6,76 @@ A set of small useful helpers
 
 ## Defines
 
-* float `SYSTEM_VERSION`
-  
-  sytem version number. Example: `7.1.1`, `8.1`, `8.1.1`
+##### `float` SYSTEM_VERSION
+Sytem version number. Example: `7.1.1`, `8.1`, `8.1.1`
 
-* bool `IS_IPHONE_5`
-  
-  returns `YES` if running on iPhone 5
+##### `bool` IS_IPHONE_5
+Returns `YES` if running on iPhone 5
 
-* bool `IS_IPHONE_6`
-  
-  returns `YES` if running on iPhone 6
+##### `bool` IS_IPHONE_6
+Returns `YES` if running on iPhone 6
 
-* bool `IS_IPHONE_6_PLUS`
-  
-  returns `YES` if running on iPhone 6 Plus
+##### `bool` IS_IPHONE_6_PLUS
+Returns `YES` if running on iPhone 6 Plus
 
-* bool `IS_IPHONE_5_OR_HIGHER`
-  
-  returns `YES` if running on iPhone 5 or more modern device
+##### `bool` IS_IPHONE_5_OR_HIGHER
+Returns `YES` if running on iPhone 5 or more modern device
 
-* bool `IS_RETINA`
-  
-  returns `YES` if running on device with Retina Display
+##### `bool` IS_RETINA
+Returns `YES` if running on device with Retina Display
 
-* bool `IOS7`
-  
-  returns `YES` if running on iOS 7 (7.x.x)
+##### `bool` IOS7
+Returns `YES` if running on iOS 7 (7.x.x)
 
-* bool `IOS8`
-  
-  returns `YES` if running on iOS 8 (8.x.x)
+##### `bool` IOS8
+Returns `YES` if running on iOS 8 (8.x.x)
 
-* bool `IOS7_OR_HIGHER`
-  
-  returns `YES` if running on iOS 7 or later
+##### `bool` IOS7_OR_HIGHER
+Returns `YES` if running on iOS 7 or later
 
 ## Types
 
-* `typedef void (^ANCodeBlock)(void);`
-* `typedef void (^ANCompletionBlock)(NSError *error);`
-* `typedef BOOL(^ANValidationBlock)();`
+##### `void` ANCodeBlock
+`typedef void (^ANCodeBlock)(void);`
+
+##### `void` ANCompletionBlock
+`typedef void (^ANCompletionBlock)(NSError *error);`
+
+##### `bool` ANValidationBlock
+`typedef BOOL(^ANValidationBlock)();`
 
 ## Methods
 
-* `void ANDispatchBlockToMainQueue(ANCodeBlock);`
+##### `void` ANDispatchBlockToMainQueue(ANCodeBlock);
 
-  Execute block on main thread
-  
-* `ANCodeBlock ANMainQueueBlockFromCompletion(ANCodeBlock);`
-  
-  Creates new block instance with execution on main thread
+Execute block on main thread
 
-* `ANCompletionBlock ANMainQueueCompletionFromCompletion(ANCompletionBlock);`
+**@param** ANCodeBlock block for execution
   
-  Execute block on main thread
+##### `ANCodeBlock` ANMainQueueBlockFromCompletion(ANCodeBlock);
 
-* `void ANDispatchCompletionBlockToMainQueue(ANCompletionBlock, NSError *);`
-  
-  Execute block on block on background thread
+Creates new block instance with execution on main thread
 
-* `void ANDispatchBlockAfter(CGFloat time, ANCodeBlock block);`
-  
-  Executes the block after specified time
+##### `ANCompletionBlock` ANMainQueueCompletionFromCompletion(ANCompletionBlock);
+
+Execute block on main thread
+
+**@param** ANCompletionBlock block to execute
+
+**@return** ANCompletionBlock returns new block with adding dispatch_main_queue
+
+##### `void` ANDispatchCompletionBlockToMainQueue(ANCompletionBlock, NSError *);
+
+Execute block on block on background thread
+
+**@param** ANCompletionBlock block to execute
+
+**@param** NSError*          instance for handling any blocks errors
+
+##### `void` ANDispatchBlockAfter(CGFloat time, ANCodeBlock block);
+
+Executes the block after specified time
+
+**@param** time Time to after
+
+**@param** block Block to execute
