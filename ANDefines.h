@@ -12,6 +12,7 @@
 #define IS_IPHONE_6_PLUS        ([[UIScreen mainScreen] bounds].size.height == 736.f)
 #define IS_IPHONE_5_OR_HIGHER   ([[UIScreen mainScreen] bounds].size.height => 568.0f)
 
+
 #pragma mark - iPad Constants
 
 #define IS_IPAD                 UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
