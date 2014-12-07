@@ -44,4 +44,6 @@ void ANDispatchCompletionBlockToMainQueue(ANCompletionBlock, NSError *);
  *  @param time Time to after
  *  @param block Block to execute
  */
-void ANDispatchBlockAfter(CGFloat time, ANCodeBlock block);
+void ANDispatchBlockAfter(CGFloat, ANCodeBlock);
+
+void ANDispatchBlockToBackgroundQueue(ANCodeBlock);
