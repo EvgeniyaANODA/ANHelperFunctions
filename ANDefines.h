@@ -29,7 +29,7 @@
 #define SYSTEM_VERSION          ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define IOS7                    (7.0 <= SYSTEM_VERSION && SYSTEM_VERSION < 8.0)
 #define IOS8                    (8.0 <= SYSTEM_VERSION && SYSTEM_VERSION < 9.0)
-#define IOS7_OR_HIGHER          (7.0 >= SYSTEM_VERSION)
+#define IOS7_OR_HIGHER          (7.0 <= SYSTEM_VERSION)
 
 
 #pragma mark - Device Orientation
