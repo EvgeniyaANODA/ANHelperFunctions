@@ -47,3 +47,10 @@ void ANDispatchCompletionBlockToMainQueue(ANCompletionBlock, NSError *);
 void ANDispatchBlockAfter(CGFloat, ANCodeBlock);
 
 void ANDispatchBlockToBackgroundQueue(ANCodeBlock);
+
+#pragma Objects
+
+static BOOL ANIsEmpty(id);
+static BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString*);
+
+

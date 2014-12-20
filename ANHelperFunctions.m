@@ -61,3 +61,22 @@ void ANDispatchBlockToBackgroundQueue(ANCodeBlock block)
     });
 }
 
+
+#pragma mark - Objects
+
+static BOOL ANIsEmpty(id thing)
+{
+    return ((thing == nil) ||
+            ([thing respondsToSelector:@selector(length)] && [(NSData *)thing length] == 0) ||
+            ([thing respondsToSelector:@selector(count)] && [(NSArray *)thing count] == 0));
+}
+
+static BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString* string)
+{
+    if (string)
+    {
+        string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    return ((string == nil) ||
+            ([string respondsToSelector:@selector(length)] && [string length] == 0));
+}
