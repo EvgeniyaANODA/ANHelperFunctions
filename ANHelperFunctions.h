@@ -50,7 +50,7 @@ void ANDispatchBlockToBackgroundQueue(ANCodeBlock);
 
 #pragma Objects
 
-static BOOL ANIsEmpty(id);
-static BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString*);
+BOOL ANIsEmpty(id);
+BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString*);
 
 

@@ -64,14 +64,14 @@ void ANDispatchBlockToBackgroundQueue(ANCodeBlock block)
 
 #pragma mark - Objects
 
-static BOOL ANIsEmpty(id thing)
+BOOL ANIsEmpty(id thing)
 {
     return ((thing == nil) ||
             ([thing respondsToSelector:@selector(length)] && [(NSData *)thing length] == 0) ||
             ([thing respondsToSelector:@selector(count)] && [(NSArray *)thing count] == 0));
 }
 
-static BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString* string)
+BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString* string)
 {
     if (string)
     {
