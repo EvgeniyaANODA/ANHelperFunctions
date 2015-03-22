@@ -53,7 +53,4 @@ void ANDispatchBlockToBackgroundQueue(ANCodeBlock);
 BOOL ANIsEmpty(id);
 BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString*);
 
-BOOL ANIsNotEmpty(id);
-BOOL ANIsNotEmptyStringByTrimmingWhitespaces(NSString*);
-
 
