@@ -80,3 +80,13 @@ BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString* string)
     return ((string == nil) ||
             ([string respondsToSelector:@selector(length)] && [string length] == 0));
 }
+
+BOOL ANNotIsEmpty(id thing)
+{
+    return !ANIsEmpty(thing);
+}
+
+BOOL ANNotIsEmptyStringByTrimmingWhitespaces(NSString* string)
+{
+    return !ANIsEmptyStringByTrimmingWhitespaces(string);
+}
