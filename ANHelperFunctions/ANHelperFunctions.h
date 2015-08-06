@@ -48,7 +48,7 @@ void ANDispatchBlockAfter(CGFloat, ANCodeBlock);
 
 void ANDispatchBlockToBackgroundQueue(ANCodeBlock);
 
-#pragma Objects
+#pragma mark - Objects
 
 BOOL ANIsEmpty(id);
 BOOL ANIsEmptyStringByTrimmingWhitespaces(NSString*);
